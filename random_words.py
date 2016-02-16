@@ -10,7 +10,7 @@ def random_words(m=10, n=10):
     u_letter = [u for u in range(ord(u"A"), ord(u"Z")+1)]      # アルファベット大文字
     hiragana = [h for h in range(ord(u"ぁ"), ord(u"ん")+1)]      # ひらがな
     katakana = [k for k in range(ord(u"ァ"), ord(u"ヴ")+1)]      # カタカナ
-    h_katakana = [h_k for h_k in range(ord(u"ｱ"), ord(u"ﾝ"))]   # 半角カタカナ
+    h_katakana = [h_k for h_k in range(ord(u"ｱ"), ord(u"ﾝ")+1)]   # 半角カタカナ
     cjk = [c for c in range(ord(u"一"), ord(u"龠")+1)]           # 漢字
 
     #dataset = digit + l_letter + u_letter + hiragana + katakana + h_katakana + cjk
