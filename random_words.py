@@ -1,17 +1,17 @@
-# -*- coding: SJIS -*-
+ï»¿# -*- coding: SJIS -*-
 import sys
 import random
 
 
 def random_words(m=10, n=10):
-    # ƒf[ƒ^ƒZƒbƒgì¬
-    digit = [d for d in range(ord(u"0"), ord(u"9")+1)]         # ”’l
-    l_letter = [l for l in range(ord(u"a"), ord(u"z")+1)]      # ƒAƒ‹ƒtƒ@ƒxƒbƒg¬•¶š
-    u_letter = [u for u in range(ord(u"A"), ord(u"Z")+1)]      # ƒAƒ‹ƒtƒ@ƒxƒbƒg‘å•¶š
-    hiragana = [h for h in range(ord(u"‚Ÿ"), ord(u"‚ñ")+1)]      # ‚Ğ‚ç‚ª‚È
-    katakana = [k for k in range(ord(u"ƒ@"), ord(u"ƒ”")+1)]      # ƒJƒ^ƒJƒi
-    h_katakana = [h_k for h_k in range(ord(u"±"), ord(u"İ"))]   # ”¼ŠpƒJƒ^ƒJƒi
-    cjk = [c for c in range(ord(u"ˆê"), ord(u"ê")+1)]           # Š¿š
+    # ãƒ‡ãƒ¼ã‚¿ã‚»ãƒƒãƒˆä½œæˆ
+    digit = [d for d in range(ord(u"0"), ord(u"9")+1)]         # æ•°å€¤
+    l_letter = [l for l in range(ord(u"a"), ord(u"z")+1)]      # ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆå°æ–‡å­—
+    u_letter = [u for u in range(ord(u"A"), ord(u"Z")+1)]      # ã‚¢ãƒ«ãƒ•ã‚¡ãƒ™ãƒƒãƒˆå¤§æ–‡å­—
+    hiragana = [h for h in range(ord(u"ã"), ord(u"ã‚“")+1)]      # ã²ã‚‰ãŒãª
+    katakana = [k for k in range(ord(u"ã‚¡"), ord(u"ãƒ´")+1)]      # ã‚«ã‚¿ã‚«ãƒŠ
+    h_katakana = [h_k for h_k in range(ord(u"ï½±"), ord(u"ï¾"))]   # åŠè§’ã‚«ã‚¿ã‚«ãƒŠ
+    cjk = [c for c in range(ord(u"ä¸€"), ord(u"é¾ ")+1)]           # æ¼¢å­—
 
     #dataset = digit + l_letter + u_letter + hiragana + katakana + h_katakana + cjk
 
@@ -35,7 +35,7 @@ def random_words(m=10, n=10):
                 elif flag == 6:
                     word = unichr(random.choice(cjk))
 
-                try: # SJIS‘Î‰‚Ìƒ`ƒFƒbƒN
+                try: # SJISå¯¾å¿œã®ãƒã‚§ãƒƒã‚¯
                     word = word.encode("SJIS")
                     break
                 except:
@@ -46,11 +46,11 @@ def random_words(m=10, n=10):
 
 
 if __name__ == "__main__":    
-    # —•¶ƒtƒ@ƒCƒ‹‚Ìì¬
+    # ä¹±æ–‡ãƒ•ã‚¡ã‚¤ãƒ«ã®ä½œæˆ
     try:
         f = open(u"random_words.txt", "w")
         f.write(random_words(10,10))
         f.close()
     except IOError:
-        print sys.exc_info[1]
+        print sys.exc_info[0]
         sys.exit()
