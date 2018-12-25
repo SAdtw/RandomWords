@@ -1,4 +1,4 @@
-﻿# -*- coding: SJIS -*-
+# -*- coding: SJIS -*-
 import sys
 import random
 
