@@ -10,6 +10,16 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: setup python defaultencoding
+          command: |
+            python -c "import sys; print sys.getdefaultencoding()"
+            path=`python -c "import site; print site.getsitepackages()[0]"`/sitecustomize.py
+            echo $path
+            echo "import sys; sys.setdefaultencoding('CP932')" > $path
+            cat $path
+            python -c "import sys; print sys.getdefaultencoding()"
+
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "requirements.txt" }}
