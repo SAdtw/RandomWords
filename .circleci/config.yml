@@ -16,7 +16,7 @@ jobs:
             python -c "import sys; print sys.getdefaultencoding()"
             path=`python -c "import site; print site.getsitepackages()[0]"`/sitecustomize.py
             echo $path
-            echo "import sys; sys.setdefaultencoding('CP932')" > $path
+            echo "import sys; sys.setdefaultencoding('utf-8')" > $path
             cat $path
             python -c "import sys; print sys.getdefaultencoding()"
 
